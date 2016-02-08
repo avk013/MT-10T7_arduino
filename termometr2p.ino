@@ -100,9 +100,11 @@ sensor_inhouse.requestTemperatures();
 sensor_outhouse.requestTemperatures();  
 temp=sensor_inhouse.getTempCByIndex(0);
 temp2=sensor_outhouse.getTempCByIndex(0);
+for (int i = 0; i < 10; i++) {write_lcd_raw(i, 0);}
 go_display(temp,offset); //offset последний разряд после числа
 go_display(temp2,offset2);
 write_lcd_raw(offset2,g);
 if (g==137) g=169; else g=137; //показ значка "о" OR "с"
 write_lcd_raw(offset,g);
-delay(100);  }}
+delay(100); 
+}}
